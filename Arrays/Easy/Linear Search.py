@@ -6,7 +6,7 @@ Optimal Code
 ********************************************************************************
 """
 
-def linearSearch(nums):
+def linearSearch(nums, target):
 
     n = len(nums)
     for i in range(n):
@@ -14,3 +14,7 @@ def linearSearch(nums):
             return i
 
     return -1
+
+nums = [1,2,3,4,5]
+target = 4
+linearSearch(nums,target)
