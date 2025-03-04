@@ -133,15 +133,15 @@ def generateRows(row):
     return ansRow
 
 
-# Code - 01
+# Input to Code - 01
 n, r = 5, 3
 print(funcnCr(n-1, r-1))
 
-# Code - 02
+# Input to Code - 02
 arr = [[] for _ in range(numRows)]
 print(pascalTriangle(numRows, arr))
 
-# Code - 03
+# Input to Code - 03
 result = list()
 for i in range(1,numRows+1):
     result.append(generateRows(i))
