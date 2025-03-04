@@ -20,6 +20,9 @@ def largestElement(arr):
 Optimal Approach
 ********************************************************
 Iterate through the array and update the largest element
+
+TC : O(N)
+SC : O(1)
 ********************************************************
 """
 
