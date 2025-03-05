@@ -1,8 +1,6 @@
 """
-************
-Optimal Code
 ********************************************************************************
-1. Iterate through array in a linear fashion and return index or value.
+Iterate through array in a linear fashion and return index or value.
 ********************************************************************************
 """
 
