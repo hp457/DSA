@@ -58,8 +58,13 @@ SC : O(n)
 ****************
 Optimal Approach
 ************************************************************************************
+                          
                             Moore's Voting Algorithm
                             
+The algorithm works by maintaining a candidate for the majority element and a count to 
+track the number of times this candidate appears relative to other elements. 
+It is based on the observation that if the majority element exists, 
+it will "survive" a sequence of eliminations during the process.
 
 *************************************************************************************
 1. Take two variables cnt = 0 and element initially.
