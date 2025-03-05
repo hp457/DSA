@@ -4,7 +4,7 @@ Brute Approach
 ***********************************************************
 Iterate through the array and store the element in Set
 
-TC : O(n) + O(n) (In rare case Hash collision or resizing else O(1) while insert in set)
+TC : O(n) + O(n) (In rare case when Hash collision or resizing happens else O(1) while insert in set)
 SC : O(n)
 ***********************************************************
 """
