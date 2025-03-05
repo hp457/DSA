@@ -12,19 +12,19 @@ SC : O(1)
 ***********************************************************
 """
 
-# def majorityElement(arr,n):
-#
-#     for i in range(n):
-#         curr_ele = arr[i]
-#         cnt = 0
-#         for j in range(i,n):
-#             if arr[j] == curr_ele:
-#                 cnt += 1
-#
-#         if cnt > math.floor(n/2):
-#             return curr_ele
-#
-#     return -1
+def majorityElement(arr,n):
+
+    for i in range(n):
+        curr_ele = arr[i]
+        cnt = 0
+        for j in range(i,n):
+            if arr[j] == curr_ele:
+                cnt += 1
+
+        if cnt > math.floor(n/2):
+            return curr_ele
+
+    return -1
 
 
 """
@@ -38,21 +38,21 @@ SC : O(n)
 ********************************************************
 """
 
-# def majorityElement(arr,n):
-#
-#     count_occur = dict()
-#
-#     for num in arr:
-#         if num not in count_occur:
-#             count_occur[num] = 1
-#         else:
-#             count_occur[num] += 1
-#
-#     for key,value in count_occur.items():
-#         if value > math.floor(n/2):
-#             return key
-#
-#     return -1
+def majorityElement(arr,n):
+
+    count_occur = dict()
+
+    for num in arr:
+        if num not in count_occur:
+            count_occur[num] = 1
+        else:
+            count_occur[num] += 1
+
+    for key,value in count_occur.items():
+        if value > math.floor(n/2):
+            return key
+
+    return -1
 
 """
 ****************
