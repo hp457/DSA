@@ -2,26 +2,16 @@
 **************
 Brute Approach
 **********************************************
-1. Iterate through the array from 1 -> n or n//2
-2. Check if (i * i) <= n, if it's true store the (i) in an ans variable
-3. If the above condition does not satisfy, break the loop
-4. Return ans
+
 
 TC : O(n)
 SC : O(1)
 **********************************************
 """
 
-def sqrt(n):
+def kokoEatingBananas(piles, h):
+    pass
 
-    ans = 1
-    for i in range(1,n):
-        if i * i <= n:
-            ans = i
-        else:
-            break
-
-    return ans
 
 
 """
@@ -43,7 +33,7 @@ SC : O(1)
 **********************************************
 """
 
-def sqrt(n):
+def kokoEatingBananas(n):
 
     low = 1
     high = n
@@ -66,5 +56,6 @@ def sqrt(n):
     return high
 
 # Input
-n = 11
-print(sqrt(n))
+piles = [3,6,7,11]
+h = 8
+print(kokoEatingBananas(piles, h))
