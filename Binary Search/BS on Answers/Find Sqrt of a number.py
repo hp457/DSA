@@ -2,61 +2,69 @@
 **************
 Brute Approach
 **********************************************
-1. Store all the non-zero number to the temp array
-2. Place back these number to original array
-3. And fill zeros for the rest of the indexes
-
-TC : O(n) + O(x) + O(n-x) --> O(2n)
-SC : O(x)
-**********************************************
-"""
-
-def sqrt(arr,n):
-
-    temp = list()
-    for i in range(n):
-        if arr[i] != 0:
-            temp.append(arr[i])
-
-    temp_size = len(temp)
-    for i in range(temp_size):
-        arr[i] = temp[i]
-
-    for i in range(temp_size,n):
-        arr[i] = 0
-
-    return arr
-
-
-"""
-**************
-Optimal Approach
-**********************************************
-1. Use two pointer approach i, j
-2. First loop will find the first zero element and break it using j
-3. Second loop will run from (j+1) -> n and replace all zero to nonZero and vice-versa
+1. Iterate through the array from 1 -> n or n//2
+2. Check if (i * i) <= n, if it's true store the (i) in an ans variable
+3. If the above condition does not satisfy, break the loop
+4. Return ans
 
 TC : O(n)
 SC : O(1)
 **********************************************
 """
 
-def zerosToTheEnd(arr,n):
+def sqrt(n):
 
-    j = 0
-    for i in range(n):
-        if arr[i] == 0:
-            j = i
+    ans = 1
+    for i in range(1,n):
+        if i * i <= n:
+            ans = i
+        else:
             break
 
-    for i in range(j+1, n):
-        if arr[i] != 0:
-            arr[i], arr[j] = arr[j], arr[i]
-            j += 1
+    return ans
 
-    return arr
+
+"""
+**************
+Optimal Approach
+**********************************************
+1. The same BS approach will be followed
+2. Initially keep the pointer low = 1 and high = n or n//2
+3. Calculate the mid element using (low + high) // 2
+4. While loop till low <= high
+5. Check
+    - mid * mid == n : return mid
+    - mid * mid < n : low = mid + 1
+    - else : high = mid - 1
+6. Once done return high ( Do it on a paper you would understand why high will be returned )
+
+TC : O(log n)
+SC : O(1)
+**********************************************
+"""
+
+def sqrt(n):
+
+    low = 1
+    high = n
+
+    while low <= high:
+        mid = (low + high) // 2
+
+        # If middle element itself equals n then return
+        if mid * mid == n:
+            return mid
+
+        # If it is less, means need a greater value, shift low
+        elif mid * mid < n:
+            low = mid + 1
+
+        # Else shift high backward
+        else:
+            high = mid - 1
+
+    return high
 
 # Input
-arr = [100, 0, 7, 0, 90]
-n = len(arr)
-print(zerosToTheEnd(arr,n))
+n = 11
+print(sqrt(n))
