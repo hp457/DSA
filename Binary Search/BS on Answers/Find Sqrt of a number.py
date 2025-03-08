@@ -11,7 +11,7 @@ SC : O(x)
 **********************************************
 """
 
-def zerosToTheEnd(arr,n):
+def sqrt(arr,n):
 
     temp = list()
     for i in range(n):
