@@ -57,7 +57,7 @@ def longestSubarray(arr, n):
         prefixSum += arr[i]
 
         if prefixSum == 0:
-            maxLen = max(maxLen, i + 1)
+            maxLen = i + 1
 
         if prefixSum not in mapp:
             mapp[prefixSum] = i
