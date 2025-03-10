@@ -23,7 +23,7 @@ def kokoEatingBananas(piles, h):
     maxBananaPile = max(piles)
     n = len(piles)
 
-    # Iterate over each banana
+    # Iterate over each banana that can be consumed
     for i in range(1, maxBananaPile + 1):
         r = 0
         totalHoursConsumed = 0
