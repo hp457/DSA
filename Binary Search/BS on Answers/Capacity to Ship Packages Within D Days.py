@@ -5,6 +5,8 @@ Brute Approach
 1. The extremely naive approach is to check all possible capacities
     from max(weights[]) to sum(weights[]). The minimum number for which the required
     days <= d value, will be our answer.
+    - Why capacity is maximum(weights[])? --> Because if we tend to deliver all the packages,
+        and it's capacity is less than weight then we would not be able to deliver.
 2. Now take the capacity and iterate through the entire array and count noOfDays.
 3. At the end, for the last iteration where it kept on adding items and array got completed,
     increase noOfDays by 1
