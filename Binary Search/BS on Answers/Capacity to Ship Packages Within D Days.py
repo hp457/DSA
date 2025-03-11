@@ -7,9 +7,10 @@ Brute Approach
     days <= d value, will be our answer.
     - Why capacity is maximum(weights[])? --> Because if we tend to deliver all the packages,
         and it's capacity is less than weight then we would not be able to deliver.
-2. Now take the capacity and iterate through the entire array and count noOfDays.
-3. At the end, for the last iteration where it kept on adding items and array got completed,
-    increase noOfDays by 1
+2. Initialize noOfDays with 1 as the ship hasn't loaded initially
+3. Now take the capacity and iterate through the entire array and count noOfDays, check if
+    totalWeight + weight exceeds load then increment days and set totalWeight to current weight
+     else store current weight in totalWeight
 4. At the end check the condition where noOdDays <= days, return capacity
 
 TC : O(N * (sum(weights) - max(weights) + 1))
@@ -26,15 +27,13 @@ def shipPackages(weights, days):
 
     for capacity in range(maxCapacity, maxTotalWeight + 1):
         totalWeight = 0
-        noOfDays = 0
+        noOfDays = 1
         for i in range(n):
             if totalWeight + weights[i] <= capacity:
                 totalWeight += weights[i]
             else:
                 noOfDays += 1
                 totalWeight = weights[i]
-
-        noOfDays += 1
 
         if noOfDays <= days:
             return capacity
@@ -64,9 +63,9 @@ def shipPackages(weights, days):
     low = max(weights)
 
     # Function to calculate totalDays for the middle element/day .
-    def calculateDays(weights, days, capacity):
+    def calculateDays(weights, capacity):
 
-        noOfDays = 0
+        noOfDays = 1
         totalWeight = 0
         for weight in weights:
             # Check if we can carry the weight
@@ -77,8 +76,6 @@ def shipPackages(weights, days):
             else:
                 noOfDays += 1
                 totalWeight = weight
-
-        noOfDays += 1
 
         if noOfDays <= days:
             return True
@@ -92,7 +89,7 @@ def shipPackages(weights, days):
 
         # Calculate totalDays for midElement, if it returns True means we can have small
         # capacity on the left which can carry all the weights
-        if calculateDays(weights, days, mid):
+        if calculateDays(weights, mid):
             high = mid - 1
 
         # Else check on right side
