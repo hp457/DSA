@@ -12,17 +12,17 @@ SC : O(1)
 """
 
 
-# def kthPositive(arr, k):
-#
-#     maxEle = max(arr)
-#     cnt = 0
-#
-#     for i in range(1, maxEle + k + 1):
-#
-#         if i not in arr:
-#             cnt += 1
-#             if cnt == k:
-#                 return i
+def kthPositive(arr, k):
+
+    maxEle = max(arr)
+    cnt = 0
+
+    for i in range(1, maxEle + k + 1):
+
+        if i not in arr:
+            cnt += 1
+            if cnt == k:
+                return i
 
 
 """
