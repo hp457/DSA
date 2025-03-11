@@ -43,7 +43,7 @@ Optimal Approach ( A tricky and Good Problem )
 5. Since we get the hypothetical numbers/array where our k would be residing is between 3 and 6
 6. Do BS on this.
 7. Now to find the k missing element, we need to do some basic maths:
-    - How you find missing at current index --> arr[high] - (high + 1)
+    - How you find missing elements till current index --> arr[high] - (high + 1)
     - How do you find more --> k - missing
     
     -----------> What we need to return --> arr[high] + more <------------
