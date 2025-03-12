@@ -67,7 +67,7 @@ Optimal Approach
     - If they exceeds m return false else true
 6. Once done return low ( Do it on a paper you would understand why low will be returned )
 
-TC : O(n * log2(maxEleOfArray))
+TC : O(n * log2(sum - max + 1))
 SC : O(1)
 **********************************************
 """
