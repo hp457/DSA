@@ -90,11 +90,10 @@ def bookAllocation(arr, n, m):
             else:
                 s += 1
                 totalStudentPages = page
+                if s > m:
+                    return False
 
-        if s == m:
-            return True
-        else:
-            return False
+        return True
 
     # Perform BS on the range
     while low <= high:
