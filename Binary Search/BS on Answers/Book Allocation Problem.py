@@ -18,38 +18,38 @@ SC : O(1)
 **********************************************
 """
 
-# def bookAllocation(arr, n, m):
-#
-#     if m > n:
-#         return -1
-#
-#     maximumPages = max(arr)
-#     totalPages = sum(arr)
-#
-#     # Function to check if the pages can fulfill all the students
-#     def checkPages(arr, pages, m):
-#
-#         totalStudentPages = 0
-#         s = 1
-#
-#         # Iterate through each page in pages array
-#         for page in arr:
-#             if page + totalStudentPages <= pages:
-#                 totalStudentPages += page
-#             else:
-#                 s += 1
-#                 totalStudentPages = page
-#
-#         # If the student are equal return True
-#         if s == m:
-#             return True
-#         else:
-#             return False
-#
-#     for pages in range(maximumPages, totalPages + 1):
-#
-#         if checkPages(arr, pages, m):
-#             return pages
+def bookAllocation(arr, n, m):
+
+    if m > n:
+        return -1
+
+    maximumPages = max(arr)
+    totalPages = sum(arr)
+
+    # Function to check if the pages can fulfill all the students
+    def checkPages(arr, pages, m):
+
+        totalStudentPages = 0
+        s = 1
+
+        # Iterate through each page in pages array
+        for page in arr:
+            if page + totalStudentPages <= pages:
+                totalStudentPages += page
+            else:
+                s += 1
+                totalStudentPages = page
+
+        # If the student are equal return True
+        if s == m:
+            return True
+        else:
+            return False
+
+    for pages in range(maximumPages, totalPages + 1):
+
+        if checkPages(arr, pages, m):
+            return pages
 
 
 """
