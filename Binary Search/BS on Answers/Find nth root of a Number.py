@@ -12,16 +12,16 @@ SC : O(1)
 **********************************************
 """
 
-# def nthRoot(m,n):
-#
-#     for i in range(m):
-#
-#         if pow(i,n) == m:
-#             return i
-#         elif pow(i,n) > m:
-#             break
-#
-#     return -1
+def nthRoot(m,n):
+
+    for i in range(m):
+
+        if pow(i,n) == m:
+            return i
+        elif pow(i,n) > m:
+            break
+
+    return -1
 
 
 """
