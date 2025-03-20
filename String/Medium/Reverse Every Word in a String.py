@@ -26,21 +26,6 @@ def reverseWordInString(s):
 
     return ' '.join(words)
 
-"""
-**************
-Brute Approach
-************************************************************
-1. Reverse the entire string.
-2. Reverse individual word in the string using pointer i, j.
-
-TC : O(n)
-SC : O(1)
-"""
-
-def reverseWordInString(s):
-
-    pass
-
 
 #Input
 s = "the sky is blue"
