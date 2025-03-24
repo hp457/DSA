@@ -43,15 +43,19 @@ Optimal Approach
 ************************************************************
 1. The approach we will be using is, slow and fast pointers.
 2. Traverse in LL until the fast pointer reaches last Node or out of LL.
-3. If any moment slow and fast pointer meet at same location, means we have a loop and
-    return slow/fast
-4. If there is no loop then fast will be pointing to the end of LL, then return None.
+3. If any moment slow and fast pointer meet at same location, means we have a loop.
+4. Now to find which node initiates the loop, will do below steps
+5. Now initialize the slow back to the head, and move slow and fast by one step, until they
+    collide again, if they collide means, we got the initial node of the loop.
+6. Return slow/fast.
+7. At the end return None, if no loop.
 
 TC : O(n)
 SC : O(1)
 """
 
 def loopDetect(self, head):
+
     slow = head
     fast = head
 
@@ -60,7 +64,15 @@ def loopDetect(self, head):
         slow = head.next
         fast = head.next.next
 
+        # We have detected a loop
         if slow == fast:
+            # slow will be pointing to head now
+            slow = head
+            # If the moment they collide again means we got the initial node
+            while slow != fast:
+                slow = slow.next
+                fast = fast.next
+
             return slow
 
     return None
