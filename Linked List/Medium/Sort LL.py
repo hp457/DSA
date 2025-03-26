@@ -56,19 +56,4 @@ SC :
 
 def sortLL(self, head):
 
-    if None == head or None == head.next:
-        return None
-
-    slow = head
-    fast = head
-    # Initially move the fast pointer only.
-    fast = fast.next.next
-
-    # Move simultaneously until fast reaches end of LL or last node.
-    while None != fast and None != fast.next:
-        slow = slow.next
-        fast = fast.next.next
-
-    # Point/Bypass the node
-    slow.next = slow.next.next
-    return head
+    pass
