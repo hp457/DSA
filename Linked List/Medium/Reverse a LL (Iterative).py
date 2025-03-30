@@ -71,6 +71,6 @@ def reverseLL(self, head):
         front = currentNode.next
         currentNode.next = prev
         prev = currentNode
-        temp = front
+        currentNode = front
 
     return prev
